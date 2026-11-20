@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#070b13" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' data:; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'; frame-src 'none'" />
+  <title>NEXUSCORE AI</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="ambient ambient-a"></div><div class="ambient ambient-b"></div>
+  <main class="app-shell">
+    <header class="topbar">
+      <div class="brand-wrap"><div class="brand-mark"><span>N</span></div><div><div class="brand-name">NEXUSCORE <b>AI</b></div><div class="brand-sub">PERSONAL ANDROID SYSTEM</div></div></div>
+      <div class="connection"><i></i><span id="connectionText">LOCAL CORE</span></div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-copy"><div class="eyebrow"><span class="pulse"></span> SYSTEM ONLINE · BUILD 0.1.0</div><h1>Kontrol sende.<br><em>Komutunu bekliyorum.</em></h1><p>Yerel komut motoru · Şeffaf izinler · Kaynak farkındalıklı çalışma</p></div>
+      <div class="core-visual"><div class="core-ring ring-outer"></div><div class="core-ring ring-mid"></div><div class="core-ring ring-inner"></div><div class="core-center">N<span>CORE</span></div><div class="orbit-dot"></div></div>
+    </section>
+
+    <section class="metrics-grid">
+      <article class="metric-card"><div class="metric-top"><span>UYGULAMA CPU</span><span class="metric-icon">⌁</span></div><div class="metric-value"><strong id="cpuValue">0.0</strong><small>%</small></div><div class="meter"><span id="cpuMeter"></span></div><div class="metric-foot"><span>Yumuşak hedef bütçe</span><b id="cpuBudget">35%</b></div></article>
+      <article class="metric-card"><div class="metric-top"><span>SİSTEM RAM</span><span class="metric-icon">▤</span></div><div class="metric-value"><strong id="ramValue">—</strong><small>MB</small></div><div class="metric-foot"><span id="ramTotal">— MB toplam</span><b>USED</b></div><div class="mini-note" id="heapValue">Uygulama heap: — MB</div></article>
+      <article class="metric-card"><div class="metric-top"><span>BATARYA SICAKLIĞI</span><span class="metric-icon">♨</span></div><div class="metric-value"><strong id="tempValue">—</strong><small>°C</small></div><div class="metric-foot"><span>Termal durum</span><b id="thermalValue">UNKNOWN</b></div><div class="mini-note" id="batteryValue">Pil: —</div></article>
+    </section>
+
+    <section class="workspace">
+      <div class="panel terminal-panel">
+        <div class="panel-heading"><div><div class="panel-kicker">01 / COMMAND INTERFACE</div><h2>Komut terminali</h2></div><span class="live-tag"><i></i> LIVE</span></div>
+        <div class="terminal-window"><div class="terminal-bar"><div class="traffic"><i></i><i></i><i></i></div><span>nexuscore://local-terminal</span><span class="terminal-lock">LOCAL</span></div><div id="terminalOutput" class="terminal-output" aria-live="polite"><div class="log-line system"><time>CORE</time><span>NEXUSCORE yerel çekirdeği başlatıldı.</span></div><div class="log-line system"><time>SAFE</time><span>Komut güvenlik duvarı aktif. Desteklenen işlemler için <b>yardım</b> yaz.</span></div></div><form id="commandForm" class="command-form"><span class="prompt">›</span><input id="commandInput" autocomplete="off" spellcheck="false" placeholder="Bir komut gir..." aria-label="Komut" /><button class="mic-btn" id="micButton" type="button" title="Sesli komut">◖</button><button class="send-btn" type="submit">GÖNDER <span>↗</span></button></form></div>
+        <div class="quick-commands"><span>HIZLI KOMUTLAR</span><button data-command="cihaz bilgisi">Cihaz bilgisi</button><button data-command="wifi ayarları">Wi-Fi</button><button data-command="ses artır">Ses artır</button><button data-command="yardım">Yardım</button></div>
+      </div>
+
+      <aside class="side-column">
+        <div class="panel status-panel"><div class="panel-heading compact"><div><div class="panel-kicker">02 / SECURITY</div><h2>Yetki durumu</h2></div><span class="shield">⬡</span></div><div class="permission-row"><div><b>Mikrofon</b><small>Yalnızca sesli komut sırasında</small></div><span id="micStatus" class="status-pill off">KAPALI</span></div><div class="permission-row"><div><b>Yüzen pencere</b><small>Sonraki sürümde planlandı</small></div><span id="overlayStatus" class="status-pill locked">PLANLANDI</span></div><div class="permission-row"><div><b>Ekran otomasyonu</b><small>Etkinleştirilmedi</small></div><span class="status-pill locked">DEVRE DIŞI</span></div><div class="security-note"><span>◆</span><p>Bu sürüm ekran içeriğini okumaz, başka uygulamalara tıklamaz ve arka planda kayıt yapmaz.</p></div></div>
+        <div class="panel log-panel"><div class="panel-heading compact"><div><div class="panel-kicker">03 / EVENT STREAM</div><h2>Sistem kayıtları</h2></div><span class="log-count" id="logCount">03</span></div><div class="event-list" id="eventList"><div class="event"><time>BOOT</time><span>Yerel arayüz hazır</span><b>OK</b></div><div class="event"><time>SAFE</time><span>İzin duvarı yüklendi</span><b>OK</b></div><div class="event"><time>MON</time><span>Kaynak izleyici başlatıldı</span><b>OK</b></div></div></div>
+      </aside>
+    </section>
+    <footer><span>NEXUSCORE AI <b>0.1.0</b></span><span>LOCAL-FIRST · NO CLOUD CONNECTION</span><span id="clock">--:--:--</span></footer>
+  </main>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>

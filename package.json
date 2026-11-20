@@ -1,14 +1,20 @@
 {
-  "name": "monstermc-mail",
-  "version": "1.0.0",
-  "main": "server.js",
+  "name": "nexuscore-ai-frontend",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
   "scripts": {
-    "start": "node server.js"
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview",
+    "sync-android": "node ./scripts/sync-android.mjs"
   },
   "dependencies": {
-    "express": "^4.18.0",
-    "cors": "^2.8.5",
-    "nodemailer": "^6.9.0",
-    "dotenv": "^16.0.0"
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "vite": "^6.3.5",
+    "@vitejs/plugin-react": "^4.7.0"
   }
 }
